@@ -1,0 +1,241 @@
+{
+	"layer": "top",
+	"position": "top",
+        "exclusive": true,
+        "height": 30,
+        "margin": "5, 5, 0, 5",
+
+	"modules-left": [
+                "keyboard-state",
+				"hyprland/workspaces",
+                
+                
+                "memory",
+				"temperature"
+	],
+        "modules-center": [
+                "clock#time"
+        ],
+	"modules-right": [
+		"tray",
+		"pulseaudio",
+		"hyprland/language",
+		"cpu",
+		"custom/power"
+		
+                
+		
+                
+        
+	],
+
+	// Modules
+
+	"battery": {
+		"interval": 10,
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format-time": "{H}:{M:02}",
+		"format": "{icon}  {capacity}%({time})",
+		"format-charging": " {capacity}% ({time})",
+		"format-charging-full": " {capacity}%",
+		"format-full": "{icon}  {capacity}%",
+		"format-alt": "{icon} {power}W",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"tooltip": false
+	},
+
+	"clock#time": {
+		"interval": 10,
+		"format": "  {:%H:%M}",
+		"tooltip": true,
+                "tooltip-format": "{:%e %B %Y}"
+	},
+
+	"clock#date": {
+		"interval": 20,
+		"format": "{:%e %b %Y}",
+		"tooltip": false
+		//"tooltip-format": "{:%e %B %Y}"
+	},
+
+	"cpu": {
+		"interval": 5,
+		"tooltip": false,
+		"format": "  {usage}%",
+		"format-alt": "  {load}",
+		"states": {
+			"warning": 70,
+			"critical": 90
+		}
+	},
+
+	"hyprland/language": {
+		"format": "  {}",
+                "format-ru": "RU",
+                "format-en": "US",
+		"tooltip": false
+	},
+
+	"memory": {
+		"interval": 5,
+		"format": " {used:0.1f}G/{total:0.1f}G",
+		"states": {
+			"warning": 70,
+			"critical": 90
+		},
+		"tooltip": false
+	},
+
+	"network": {
+		"interval": 5,
+		"format-wifi": "  {signalStrength}%",
+		"format-ethernet": "",
+		"format-disconnected": "Нет подключения",
+		"format-alt": " {ipaddr}/{cidr}",
+                "on-click-right": "kitty --hold sh -c nmtui",
+                "tooltip-format": "{essid}{ifname}",
+		"tooltip": true
+	},
+
+	"hyprland/mode": {
+		"format": "{}",
+		"tooltip": false
+	},
+
+	"hyprland/window": {
+		"format": "{}",
+		"max-length": 50,
+		"tooltip": false
+	},
+
+	"hyprland/workspaces": {
+		"disable-scroll-wraparound": false,
+		"smooth-scrolling-threshold": 4,
+		"enable-bar-scroll": true,
+		"format": "",
+                "format-icons": {
+                   "active": "",
+                   "urgent": "",
+                   "default": ""
+                }                  
+	},
+
+	"pulseaudio": {
+		"scroll-step": 5,
+		"format": "<span color='#8fb884'>{icon}</span> {volume}%",
+		"format-icons": {
+		"default": ["", "", ""]
+		},
+		"on-click": "pavucontrol",
+		"tooltip": false
+	},
+
+
+	"temperature": {
+		"critical-threshold": 90,
+		"interval": 5,
+		"format": "{icon} {temperatureC}°",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"tooltip": false
+	},
+
+	"tray": {
+		"icon-size": 18,
+		"spacing": 6
+	},
+
+        "backlight": {
+		// "device": "acpi_video1",
+		"format": "{icon} {percent}%",
+		"format-icons": [" ", " "],
+                "tooltip": false
+	},
+
+        "idle_inhibitor": {
+                "format": "{icon}",
+                "tooltip": true,
+                "format-icons":{
+                     "activated": " ",
+                     "deactivated": " "
+        },
+        "on-click-right": "hyprlock"
+
+},
+
+        "bluetooth": {
+    "format-on": "",
+    "format-off": "-",
+    "format-disabled": "-",
+    "format-connected": "<b></b>",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "kitty --hold sh -c bluetuith",
+        },
+
+        "custom/notification": {
+    "tooltip": false,
+  "format": "{icon}",
+  "format-icons": {
+    "notification": "󱅫 ",
+    "none": " ",
+    "dnd-notification": " ",
+    "dnd-none": "󰂛 ",
+    "inhibited-notification": " ",
+    "inhibited-none": " ",
+    "dnd-inhibited-notification": " ",
+    "dnd-inhibited-none": " ",
+  },
+  "return-type": "json",
+  "exec-if": "which swaync-client",
+  "exec": "swaync-client -swb",
+  "on-click": "sleep 0.1 && swaync-client -t -sw",
+  "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+  "escape": true,
+  },
+
+        "custom/drun": {
+    "format": "W",
+    "on-click": "wofi --show drun",
+    "return-type": "json",
+    "tooltip": false,
+  },
+        "keyboard-state": {
+        "numlock": false,
+        "capslock": true,
+        "format": "{icon} {name}",
+        "format-icons": {
+            "locked": " ",
+            "unlocked": " "
+		},
+		"custom/power": {
+			"format": "{icon}",
+			"format-icons": "",
+			"on-click": "~/.config/rofi/powermenu/type-4/powermenu.sh",
+			"escape": true,
+			"tooltip": false
+		},
+	
+		"escape": true,
+		"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+		}    
+}
+
+
+  

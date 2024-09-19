@@ -1,0 +1,135 @@
+* {
+  font-family: Roboto Bold;
+  font-weight: bold;
+  font-size: 14px;
+  min-height: 0;
+  color: rgba(171, 195, 171, 0.685);
+  border-radius: 6px;
+}
+
+window#waybar {
+  background-color: rgba(23, 24, 22, 0.616);
+}
+
+#keyboard-state {
+  background-color: rgba(58, 58, 58, 0.582);
+  padding: 0 6px 0 6px;
+  margin: 0 6px 0 0;
+}
+
+#cpu {
+  background-color: rgba(58, 58, 58, 0.582);
+  padding: 0 6px 0 6px;
+  margin: 0 6px 0 6px;
+}
+
+#temperature {
+  background-color: rgba(58, 58, 58, 0.582);
+  padding: 0 6px 0 6px;
+  margin: 0 6px 0 6px;
+}
+
+#memory {
+  background-color: rgba(58, 58, 58, 0.582);
+  padding: 0 6px 0 6px;
+  margin: 0 0 0 6px;
+}
+
+#workspaces {
+  background-color: rgba(58, 58, 58, 0.582);
+  padding: 5px 0 5px 0;
+}
+
+#workspaces button {
+  background-color: rgb(92, 110, 108);
+  border-radius: 100px;
+  margin: 0 6px 0 6px;
+  padding: 0 2px 0 2px;
+}
+
+#workspaces button.active {
+  background-color: rgb(149, 163, 162);
+  padding: 0 10px 0 10px;
+}
+
+#tray {
+  background-color: rgba(58, 58, 58, 0.582);
+  padding: 0 6px 0 6px;
+  margin: 0 6px 0 0;
+}
+
+#tray menu {
+  background-color: rgba(58, 58, 58, 0.582);
+}
+
+#tray menu :hover {
+  background-color: rgba(171,195,171,0.7);
+}
+
+#tray menu :hover label {
+  color: rgba(58, 58, 58, 0.582);
+}
+
+#tray window {
+  background-color: rgba(0, 0, 0, 0);
+  border-style: none;
+  color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+
+#tray window decoration{
+  border-style: none;
+  box-shadow: none;
+}
+
+#pulseaudio {
+  background-color: rgba(58, 58, 58, 0.582);
+  padding: 0 6px 0 6px;
+  margin: 0 6px 0 6px;
+}  
+ 
+#pulseaudio.muted {
+  padding: 0 14px 0 12px;
+}
+
+#backlight {
+  background-color: rgba(58, 58, 58, 0.582);
+  padding: 0 6px 0 6px;
+  margin: 0 6px 0 6px;
+}
+
+#battery {
+  background-color: rgba(71,128,96,0.7);
+  padding: 0 6px 0 6px;
+  margin: 0 6px 0 6px;
+}
+
+#language {
+  background-color: rgba(58, 58, 58, 0.582);
+  padding: 0 6px 0 6px;
+  margin: 0 6px 0 6px;
+}
+
+#bluetooth {
+  background-color: rgba(71,128,96,0.7);
+  padding: 0 12px 0 12px;
+  margin: 0 0 0 6px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+#network {
+  background-color: rgba(71,128,96,0.7);
+  padding: 0 12px 0 6px;
+  margin: 0 6px 0 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+  
+#clock {
+  background-color: rgba(58, 58, 58, 0.582);
+  padding: 0 6px 0 6px;
+  margin: 0 0 0 6px;
+}
