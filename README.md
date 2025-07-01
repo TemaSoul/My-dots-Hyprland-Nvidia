@@ -1,5 +1,5 @@
 # My-dots-Hyprland-Nvidia
--these are my dot files
+- these are my dot files
 
 # Fronts:
 - opendesktop-fonts 
